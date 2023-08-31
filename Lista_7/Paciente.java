@@ -19,11 +19,17 @@ public class Paciente {
 
     }
 
-    public Paciente(String codigo, String nome, String dataNascimento, String sexo) {
+    public Paciente(String codigo, String nome, String dataNascimento, String sexo, String tipoSanguineo) {
         this.codigo = codigo;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
+        this.tipoSanguineo = tipoSanguineo;
+
+    }
+
+    public Paciente() {
+
     }
 
     // metodos acessadores
