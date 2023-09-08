@@ -56,10 +56,12 @@ public class Medico {
     @Override
     public String toString() {
 
-        if(this.sexo.toLowerCase.equals("masculino")) {
-            return "Dr. " + this.nome + " ," + this.especialidade + " - " + this.codigo + " - " + this.endereco.toString;
+        if (this.sexo.toLowerCase().equals("masculino")) {
+            return "Dr. " + this.nome + " ," + this.especialidade + " - " + this.codigo + " - Endereço\n "
+                    + this.endereco.toString();
         }
-        return "Dra. " + this.nome + " ," + this.especialidade + " - " + this.codigo + " - " + this.endereco.toString;
+        return "Dra. " + this.nome + " ," + this.especialidade + " - " + this.codigo + " - Endereço\n"
+                + this.endereco.toString();
 
     }
 

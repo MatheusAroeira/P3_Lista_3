@@ -2,8 +2,7 @@ package Lista_7;
 
 public class Endereco {
 
-    private String rua, numero, bairro, cidade, uf, cep;
-    private String complemento = "Não consta";
+    private String rua, numero, bairro, cidade, uf, cep, complemento;
 
     public Endereco(String rua, String numero, String bairro, String cidade, String uf, String cep,
             String complemento) {
@@ -26,10 +25,7 @@ public class Endereco {
         this.cidade = cidade;
         this.uf = uf;
         this.cep = cep;
-
-    }
-
-    public Endereco() {
+        this.complemento = "Não consta";
 
     }
 

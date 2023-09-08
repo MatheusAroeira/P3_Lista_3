@@ -2,33 +2,30 @@ package Lista_7;
 
 public class Paciente {
 
-    private String codigo, nome, dataNascimento, sexo;
-    private String alergia = "Não Consta";
-    private String tipoSanguineo = "Não Consta";
-    private String planoSaude = "Não Consta";
+    private String codigo, nome, dataNascimento, sexo, alergia, planoSaude, tipoSanguineo;
 
-    public Paciente(String codigo, String nome, String dataNascimento, String sexo, String planoSaude, String alergia,
-            String tipoSanguineo) {
+    public Paciente(String codigo, String nome, String dataNascimento, String sexo, String tipoSanguineo,
+            String alergia, String planoSaude) {
+
         this.codigo = codigo;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
-        this.planoSaude = planoSaude;
+        this.tipoSanguineo = tipoSanguineo;
         this.alergia = alergia;
-        this.tipoSanguineo = tipoSanguineo;
+        this.planoSaude = planoSaude;
 
     }
 
-    public Paciente(String codigo, String nome, String dataNascimento, String sexo, String tipoSanguineo) {
+    public Paciente(String codigo, String nome, String dataNascimento, String sexo, String tipoSanguineo,
+            String planoSaude) {
         this.codigo = codigo;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.sexo = sexo;
         this.tipoSanguineo = tipoSanguineo;
-
-    }
-
-    public Paciente() {
+        this.planoSaude = planoSaude;
+        this.alergia = "Não Consta";
 
     }
 
@@ -63,6 +60,10 @@ public class Paciente {
     }
 
     // metodos modificadores
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 
     public void setNome(String nome) {
         this.nome = nome;
