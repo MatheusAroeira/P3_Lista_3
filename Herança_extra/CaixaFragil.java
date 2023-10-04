@@ -1,20 +1,18 @@
 public class CaixaFragil extends Caixa {
 
-    private double pesoMaximoSuportado;
-
-    public CaixaFragil(String id, String conteudo, double peso, double altura) {
+    public CaixaFragil(String id, String conteudo, double peso, double altura, double pesoMaxSuportado) {
         super(id, conteudo, peso, altura);
-        this.pesoMaximoSuportado = this.getPeso();
+        this.pesoMaxSuportado = this.getPeso();
     }
 
     public double getPesoMaximoSuportado() {
-        return pesoMaximoSuportado;
+        return pesoMaxSuportado;
     }
 
     public String exibirEtiqueta() {
         return "caixa fragil [id = " + this.getId() + ", conteudo = " + this.getConteudo() + ", peso = "
                 + this.getPeso() + "kg, altura = " + this.getAltura() + "cm, peso maximo suportado "
-                + this.pesoMaximoSuportado + "kg]";
+                + this.pesoMaxSuportado + "kg]";
     }
 
 }
