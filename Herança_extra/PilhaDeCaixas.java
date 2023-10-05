@@ -13,21 +13,25 @@ public class PilhaDeCaixas {
     }
 
     public boolean empilhar(Caixa caixa) {
-        if (this.stackCaixa.isEmpty()) {
+        if (this.stackCaixa.isEmpty()) {  //pilha vazia;
             this.stackCaixa.add(caixa);
             this.topIndex++;
             return true;
-        } else if (this.alturaAtual() + caixa.getAltura() <= this.alturaMaxima) {
-            this.stackCaixa.add(caixa);
-            this.topIndex++;
-            return true;
-        } else if (this.stackCaixa.get(topIndex) instanceof CaixaFragil
-                && this.stackCaixa.get(this.topIndex).getPesoMaxSuportado() <= caixa.getPeso()) {
-
-            this.stackCaixa.add(caixa);
-            this.topIndex++;
-            return true;
-
+        } else if (this.alturaAtual() + caixa.getAltura() <= this.alturaMaxima) {   // altura maxima não atingida;
+            if (this.stackCaixa.get(topIndex) instanceof CaixaFragil) {    // a caixa do topo é uma caixa fragil;
+                if (this.stackCaixa.get(topIndex).getPesoMaxSuportado() >= caixa.getPeso()) {  // o peso da nova caixa é suportado pela caixa fragil do topo;
+                    this.stackCaixa.add(caixa);
+                    this.topIndex++;
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            else {
+                this.stackCaixa.add(caixa);
+                this.topIndex++;
+                return true;
+            }
         }
 
         return false;
