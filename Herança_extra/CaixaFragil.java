@@ -1,5 +1,7 @@
 public class CaixaFragil extends Caixa {
 
+    private double pesoMaxSuportado;
+
     public CaixaFragil(String id, String conteudo, double peso, double altura, double pesoMaxSuportado) {
         super(id, conteudo, peso, altura);
         this.pesoMaxSuportado = this.getPeso();

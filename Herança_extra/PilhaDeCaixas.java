@@ -21,10 +21,13 @@ public class PilhaDeCaixas {
             this.stackCaixa.add(caixa);
             this.topIndex++;
             return true;
-        } else if (this.stackCaixa.get(this.topIndex).getPesoMaxSuportado() <= caixa.getPeso()) {
+        } else if (this.stackCaixa.get(topIndex) instanceof CaixaFragil
+                && this.stackCaixa.get(this.topIndex).getPesoMaxSuportado() <= caixa.getPeso()) {
+
             this.stackCaixa.add(caixa);
             this.topIndex++;
             return true;
+
         }
 
         return false;
@@ -57,12 +60,12 @@ public class PilhaDeCaixas {
 
     public String getInfo() {
         String result = "";
-        if(this.isEmpty()){
+        if (this.isEmpty()) {
             return "Pilha vazia";
         }
-        
+
         for (int i = this.topIndex; i >= 0; i--) {
-            
+
         }
         return result;
     }
