@@ -43,12 +43,8 @@ public class Caixa {
         this.altura = altura;
     }
 
-    public int getPesoMaxSuportado(){
-        return -1;
-    }
-
     public String exibirEtiqueta() {
-        return "caixa [id = " + this.id + ", conteudo =" + this.conteudo + ", peso = " + this.peso + "kg, altura = "
+        return "Caixa [id = " + this.id + ", conteudo =" + this.conteudo + ", peso = " + this.peso + "kg, altura = "
                 + this.altura + "cm]";
     }
 

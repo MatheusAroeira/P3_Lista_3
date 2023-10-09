@@ -19,7 +19,8 @@ public class PilhaDeCaixas {
             return true;
         } else if (this.alturaAtual() + caixa.getAltura() <= this.alturaMaxima) {   // altura maxima não atingida;
             if (this.stackCaixa.get(topIndex) instanceof CaixaFragil) {    // a caixa do topo é uma caixa fragil;
-                if (this.stackCaixa.get(topIndex).getPesoMaxSuportado() >= caixa.getPeso()) {  // o peso da nova caixa é suportado pela caixa fragil do topo;
+                CaixaFragil aux = (CaixaFragil) this.stackCaixa.get(topIndex); // variavel auxiliar do tipo caixa fragil;
+                if (aux.getPesoMaxSuportado() >= caixa.getPeso()) {  // o peso da nova caixa é suportado pela caixa fragil do topo;
                     this.stackCaixa.add(caixa);
                     this.topIndex++;
                     return true;
@@ -68,9 +69,13 @@ public class PilhaDeCaixas {
             return "Pilha vazia";
         }
 
-        for (int i = this.topIndex; i >= 0; i--) {
-
+        result += "Peso Total: " + this.pesoAtual() + "Altura Total: " + this.alturaAtual() + "\n"; 
+        
+        for (Caixa caixa : this.stackCaixa) {
+            result += caixa.exibirEtiqueta() + "\n";
         }
+
+
         return result;
     }
 
