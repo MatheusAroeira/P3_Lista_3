@@ -1,23 +1,21 @@
 package Question3;
 
-public class NumerosDiv {
+public class NumerosDiv extends Exception {
 
     private int n1, n2;
 
-    public NumerosDiv(int n1, int n2) {
+    public NumerosDiv(Integer n1, Integer n2) throws Exception {
         this.n1 = n1;
         this.n2 = n2;
     }
 
-    public double dividir(){
-        int divisao ;
-        
+    public double dividir() {
         try {
-            divisao = this.n1/this.n2;
-            return divisao;
-        } catch (ArithmeticException e) {
-            throw new RuntimeException("Impossivel dividir por zero!");
+            return this.n1 / this.n2;
+        } catch (Exception e) {
+            throw new ArithmeticException("Divisão por zero");
         }
+
     }
 
     public int getN1() {
@@ -35,5 +33,5 @@ public class NumerosDiv {
     public void setN2(int n2) {
         this.n2 = n2;
     }
-    
+
 }
