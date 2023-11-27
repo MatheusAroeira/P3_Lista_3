@@ -150,10 +150,10 @@ public class TesteOperacoes {
     }
 
     public void apresentarMenu() {
+        int escolha = 0;
         try {
-            int escolha;
             do {
-                System.out.print("[1]Criar conta\n[2]Realizar operações\n[3]Exibir saldo\n[0]Sair");
+                System.out.print("[1]Criar conta\n[2]Realizar operações\n[3]Exibir saldo\n[0]Sair\nEscolha: ");
                 escolha = scan.nextInt();
 
                 switch (escolha) {
@@ -167,7 +167,7 @@ public class TesteOperacoes {
                         exibirSaldo();
                         break;
                     case 0:
-                        return;
+                        System.exit(0);
 
                     default:
                         System.out.print("Opção invalida");
@@ -177,7 +177,6 @@ public class TesteOperacoes {
             } while (escolha != 0);
         } catch (InputMismatchException e) {
             System.out.println("Entrada invalida detectada!");
-            apresentarMenu();
         }
 
     }
